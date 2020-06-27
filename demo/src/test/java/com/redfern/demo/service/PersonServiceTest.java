@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import com.redfern.demo.dao.FakePersonAccessDataService;
+import com.redfern.demo.dao.PersonDao;
 import com.redfern.demo.model.Person;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -22,6 +23,12 @@ class PersonServiceTest {
 
 	@Test
 	@Order(1)
+	void personService_GivenConcretePersonDao_ShouldContructPersonDao() {
+		assertTrue(pS instanceof PersonService);
+	}
+	
+	@Test
+	@Order(2)
 	void void_GivenPerson_ShouldInsertPerson() {
 		assertTrue(pS.insertPerson(new Person("Bob")));
 	}

@@ -9,6 +9,7 @@ public interface PersonDao {
 	List<Person> dB = null;
 
 	boolean insertPerson(UUID id, Person person);
+	List<Person> selectAllPeople();
 	
 	// insertPerson() now  boolean, not int
 	default boolean insertPerson(Person person) {

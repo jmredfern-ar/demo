@@ -26,4 +26,9 @@ public class FakePersonAccessDataService implements PersonDao{
 		return this.dB.add(new Person(id, person.getName()));
 	}
 
+	@Override
+	public List<Person> selectAllPeople() {
+		return this.dB;
+	}
+
 }
